@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeTypr</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>CodeTypr</h1>
+        <p>Type the code snippet as fast as you can!</p>
+        <p>Type something to start!</p>
+        <div>
+            <label for="difficulty">Choose difficulty: </label>
+            <select id="difficulty" onchange="setDifficulty()">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <div id="word-display">_ _ _ _ _</div>
+        <div id="mistyped-display"></div>
+        <input type="text" id="user-input" placeholder="Start typing..." autofocus />
+        <p>Time: <span id="timer">0</span>s</p>
+        <p>Score: <span id="score">0</span></p>
+        <p>WPM: <span id="wpm">0</span></p>
+        <button id="restart-button" onclick="restartGame()" style="display:none;">Restart</button>
+        
+        <!-- Button to show achievements -->
+        <button id="show-achievements-button" onclick="toggleAchievementsDisplay()">Show Achievements</button>
+
+        <!-- Achievement notifications -->
+        <div id="achievement-notification" style="color: green; margin-top: 10px;"></div>
+
+        <!-- Achievement modal (hidden by default) -->
+        <div id="achievement-display" style="display: none; margin-top: 20px;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
